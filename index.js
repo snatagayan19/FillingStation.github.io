@@ -53,20 +53,31 @@ start.addEventListener('click',function(){
   litresVal=(priceVal/80).toFixed(2);
  console.log(litresVal);
  console.log(typeof(priceVal));
- let Pricecount=0.0;
+ let Pricecount=0;
  Litrescount=0.00;
- setInterval(()=>{
+  
+   setInterval(()=>{
     if(Pricecount<=priceVal){
         price.innerText=Pricecount;
+        if(Litrescount<=Pricecount/80){
+            litres.innerText=Litrescount.toFixed(2);
+            Litrescount+=0.0125;
+            
+        }
         Pricecount++;
+        clear.disabled=true;
     }
-    if( Litrescount<=litresVal)
-       { 
-           litres.innerText=Litrescount.toFixed(2);
-           Litrescount+=0.01;
-      
-    }
- },25); 
+ },325);  //300
+ setTimeout(()=>{
+    clear.disabled=false;
+    console.log("disable")
+ },325*(priceVal+1));
+  
+  
 });
+
+    
+
+
 
 
