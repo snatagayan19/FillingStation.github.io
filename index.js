@@ -46,22 +46,21 @@ start.addEventListener('click',function(){
  console.log(litresVal);
  console.log(typeof(priceVal));
  let Pricecount=0.0;
- 
+ Litrescount=0;
+   
  setInterval(()=>{
     if(Pricecount<=priceVal){
         price.innerText=Pricecount;
         Pricecount++;
-        
     }
- },25);
-  Litrescount=0;
- setInterval(()=>{
-    if(Litrescount<=litresVal){
-        litres.innerText=Litrescount.toFixed(2);
+    if( Litrescount<=litresVal)
+       { litres.innerText=Litrescount.toFixed(2);
         Litrescount+=0.01;
         
     }
- },50);
+ },25);
+
+
 
 
 });
