@@ -33,36 +33,40 @@ let price = document.getElementById('price');
 let litres = document.getElementById('litres');
 let start = document.getElementById('btn-start');
 let clear = document.getElementById('btn-clear');
+let priceVal=0.00;
+let litresVal=0.00;
 clear.addEventListener('click',function(){
     price.innerText="0.00";
     litres.innerText="0.00";
     screen.innerText="";
     screenVal="";
+    priceVal=0.00;
+    litresVal=0.00;
+
+
 })
 
 start.addEventListener('click',function(){
- var priceVal=parseFloat(screenVal);
- var litresVal=(priceVal/80).toFixed(2);
+    
+  priceVal=parseFloat(screenVal);
+ console.log(priceVal);
+  litresVal=(priceVal/80).toFixed(2);
  console.log(litresVal);
  console.log(typeof(priceVal));
  let Pricecount=0.0;
- Litrescount=0;
-   
+ Litrescount=0.00;
  setInterval(()=>{
     if(Pricecount<=priceVal){
         price.innerText=Pricecount;
         Pricecount++;
     }
     if( Litrescount<=litresVal)
-       { litres.innerText=Litrescount.toFixed(2);
-        Litrescount+=0.01;
-        
+       { 
+           litres.innerText=Litrescount.toFixed(2);
+           Litrescount+=0.01;
+      
     }
- },25);
-
-
-
-
+ },25); 
 });
 
 
