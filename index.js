@@ -66,10 +66,12 @@ start.addEventListener('click',function(){
         }
         Pricecount++;
         clear.disabled=true;
+         start.disabled=true;
     }
  },325);  //300
  setTimeout(()=>{
     clear.disabled=false;
+   start.disabled=false;
     console.log("disable")
  },325*(priceVal+1));
   
